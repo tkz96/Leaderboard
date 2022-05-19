@@ -1,8 +1,9 @@
-const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/';
+const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+const GAME_ID = 'iLhUHUKbK0GFKQnhs8n8';
 
 const sendScoreToAPI = async (name, score) => {
     await fetch(
-        `'${BASE_URL}/games/lQk6PtMS8WHtKZi99VDH/scores'`,
+        `'${BASE_URL}${GAME_ID}/scores'`,
         {
             method: 'POST',
             headers: {
@@ -23,3 +24,5 @@ const refreshScores = async () => {
     .then((response) => response.json())
     .then((json) => renderUi(json));
 };
+
+module.exports = { sendScoreToAPI, refreshScores }
