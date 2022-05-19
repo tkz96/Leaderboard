@@ -1,28 +1,37 @@
-const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
-const GAME_ID = 'iLhUHUKbK0GFKQnhs8n8';
+import { renderTable } from './renderTable.js';
 
-const sendScoreToAPI = async (name, score) => {
+// const BASE_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/';
+// const GAME_ID = 'iLhUHUKbK0GFKQnhs8n8';
+const FINAL_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iLhUHUKbK0GFKQnhs8n8/scores/';
+
+const API_sendScore = async (_name, _score) => {
     await fetch(
-        `'${BASE_URL}${GAME_ID}/scores'`,
+        `${FINAL_URL}`,
         {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json',
             },
             body: JSON.stringify({
-                user: name,
-                score,
+                user: _name,
+                _score,
             }),
         }
-    ).then((response) => response.json());
+    ).then((response) => response.json())
+    .then((response) => alert(response));
 };
 
-const refreshScores = async () => {
+const API_refreshScores = async () => {
     await fetch(
-        'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/LzQ66iqiKtZlXDNStqI0/scores',
-    )
+        `${FINAL_URL}`,
+        {
+            method: 'GET',
+            headers: {
+                'Content-type': 'application/json',
+            },
+        })
     .then((response) => response.json())
-    .then((json) => renderUi(json));
+    .then((json) => renderTable(json));
 };
 
-module.exports = { sendScoreToAPI, refreshScores }
+export { API_sendScore, API_refreshScores };

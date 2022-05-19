@@ -1,16 +1,21 @@
 import './styles.css';
-import { sendScoreToAPI, refreshScores } from './games.js';
+import { API_sendScore, API_refreshScores } from './games.js';
 
 const form = document.querySelector('form');
 const refresh = document.getElementById('refresh-scores');
+const name = document.getElementById('name').value;
+const score = document.getElementById('score').value;
+
+const clearFormFields = () => {
+
+};
 
 window.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById().value;
-        const score = document.getElementById().value;
-        sendScoreToAPI(name, score)
+        API_sendScore(name, score);
+        clearFormFields();
     });
 
-    refresh.addEventListener('click', refreshScores());
+    refresh.addEventListener('click', API_refreshScores());
 });
