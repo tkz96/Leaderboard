@@ -28,8 +28,11 @@ You may need to install Node.js to run the code linters (that are included in th
 
 ### Usage
 
-Please run the following command to run the project locally:
-`npm run dev`
+- Please run the following command to run the project locally:
+
+```sh
+npm run dev
+```
 
 ## Author
 
