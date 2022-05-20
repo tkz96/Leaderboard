@@ -3,13 +3,13 @@ import renderTable from './renderTable.js';
 const FINAL_URL = 'https://us-central1-js-capstone-backend.cloudfunctions.net/api/games/iLhUHUKbK0GFKQnhs8n8/scores/';
 
 const apiRefreshScores = async () => {
-  await fetch(`${FINAL_URL}`)
-    .then((response) => response.json())
-    .then((json) => renderTable(json));
+  const data = await fetch(`${FINAL_URL}`);
+  const response = await data.json();
+  renderTable(response);
 };
 
 const apiSendScore = async (_name, _score) => {
-  await fetch(`${FINAL_URL}`, {
+  const data = await fetch(`${FINAL_URL}`, {
     method: 'POST',
     headers: {
       'Content-type': 'application/json',
@@ -18,8 +18,8 @@ const apiSendScore = async (_name, _score) => {
       user: _name,
       score: _score,
     }),
-  }).then((response) => response.json());
-  apiRefreshScores();
+  });
+  return data.json();
 };
 
 export { apiSendScore, apiRefreshScores };
