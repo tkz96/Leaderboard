@@ -10,9 +10,10 @@ const API_sendScore = async (_name, _score) => {
         },
         body: JSON.stringify({
             user: _name,
-            _score,
+            score: _score,
         }),
     }).then((response) => response.json());
+    API_refreshScores();
 };
 
 const API_refreshScores = async () => {

@@ -17,8 +17,8 @@ window.addEventListener('DOMContentLoaded', () => {
         const score = document.getElementById('score').value;
         console.log(name);
         console.log(score);
-        // API_sendScore(name, score);
-        clearFormFields();
+        API_sendScore(name, score);
+        form.reset()
     });
     
 });
