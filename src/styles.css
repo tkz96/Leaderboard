@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Dongle;
+  font-family: Dongle, sans-serif;
   src: url(Dongle-Bold.ttf);
   font-weight: bold;
 }
@@ -8,7 +8,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  font-family: Dongle;
+  font-family: Dongle, sans-serif;
 }
 
 body {
@@ -33,9 +33,8 @@ h2 {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
   grid-column-gap: 24px;
-  grid-row-gap: 0px;
+  grid-row-gap: 0;
   margin: 0 auto;
-  
 }
 
 .add-your-score {
