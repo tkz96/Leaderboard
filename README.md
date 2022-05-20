@@ -28,7 +28,11 @@ You may need to install Node.js to run the code linters (that are included in th
 
 ### Usage
 
-This website exists solely for personal use and display of skill proficiency. You are free to download and use the source code for your project.
+- Please run the following command to run the project locally:
+
+```sh
+npm run dev
+```
 
 ## Author
 
