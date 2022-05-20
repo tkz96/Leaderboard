@@ -1,24 +1,21 @@
 import './styles.css';
-import { API_sendScore, API_refreshScores } from './games.js';
+import { apiSendScore, apiRefreshScores } from './games.js';
 
-window.onload = API_refreshScores();
+window.onload = apiRefreshScores();
 
 const form = document.querySelector('form');
-const refresh = document.getElementById('refresh-scores')
+const refresh = document.getElementById('refresh-scores');
 
 refresh.onclick = () => {
-    API_refreshScores();
-}
+  apiRefreshScores();
+};
 
 window.addEventListener('DOMContentLoaded', () => {
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const score = document.getElementById('score').value;
-        console.log(name);
-        console.log(score);
-        API_sendScore(name, score);
-        form.reset()
-    });
-    
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const score = document.getElementById('score').value;
+    apiSendScore(name, score);
+    form.reset();
+  });
 });
