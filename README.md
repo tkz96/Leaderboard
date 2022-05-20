@@ -5,7 +5,7 @@ This repository is dedicated to a leaderboard project.
 
 ## Built With
 
-- Languages: Vanilla HTML 5, CSS 3, Javascript
+- Languages: HTML 5, CSS 3, Javascript
 - Technologies used: Git, GitHub, VS Code, Webpack
 
 ## Getting Started

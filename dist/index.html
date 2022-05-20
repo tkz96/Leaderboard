@@ -3,8 +3,8 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><%= htmlWebpackPlugin.options.title %></title>
-    </head>
+        <title>Leaderboard</title>
+    <script defer src="index.bundle.js"></script></head>
     
     <body>
         <h1>Leaderboard</h1>
@@ -12,7 +12,7 @@
             <div class="recent-scores">
                 <h2>Recent Scores</h2>
                 <button type="submit" id="refresh-scores">Refresh</button>
-                <ul id="leaderboard"></ul>
+                <table class="leaderboard"></table>
             </div>
             <div class="add-your-score">
                 <h2>Add Your Score</h2>
